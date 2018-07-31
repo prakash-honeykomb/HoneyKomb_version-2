@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eaeaea"
+    app:ignore="NamespaceTypo">
+
+    <LinearLayout
+        android:id="@+id/calendar_LL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.azurechen.fcalendar.widget.FlexibleCalendar
+            android:id="@+id/calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:firstDayOfWeek="sunday"
+            custom:showWeek="true"
+            custom:state="expanded"
+            custom:textColor="@color/black"
+            custom:todayItem_background="@drawable/circle_white_solid_background"
+            custom:todayItem_textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/event_list_LL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calendar_LL"
+        android:layout_marginBottom="45dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/events_list_LV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/no_event_LL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pending_events_count_LL"
+        android:layout_below="@+id/calendar_LL"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/no_events_TV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/no_events_to_list"
+            android:textColor="@color/title_color"
+            android:textSize="@dimen/owner_name_text_size" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/pending_events_count_LL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/pending_LL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/pending_invitation_title_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingStart="10dp"
+                android:text="@string/pending_events"
+                android:textColor="@color/bar_title_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/pending_TV"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
+                android:layout_toEndOf="@+id/pending_invitation_title_TV"
+                android:layout_toRightOf="@+id/pending_invitation_title_TV"
+                android:background="@drawable/circle_white_solid_background"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/arrow_IMV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:contentDescription="@string/list"
+                android:src="@mipmap/indicator_arrow_up" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/pending_events_RCV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pending_LL"
+            android:scrollbars="horizontal"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:reverseLayout="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

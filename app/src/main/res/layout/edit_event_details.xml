@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:hintTextAppearance="@style/MyAppearance">
+
+            <EditText
+                android:id="@+id/edit_event_title_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:maxLength="100"
+                android:hint="@string/event_title"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="@color/title_color"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/edit_text"
+                app:backgroundTint="@color/edit_text_tint_color"
+                tools:ignore="LabelFor" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:hintTextAppearance="@style/MyAppearance">
+
+            <EditText
+                android:id="@+id/edit_event_description_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/description"
+                android:inputType="text"
+                android:maxLines="5"
+                android:textColor="@color/title_color"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/edit_text"
+                app:backgroundTint="@color/edit_text_tint_color"
+                tools:ignore="LabelFor" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="0.9"
+                app:hintTextAppearance="@style/MyAppearance">
+
+                <EditText
+                    android:id="@+id/edit_event_location_ET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/location"
+                    android:inputType="text"
+                    android:singleLine="true"
+                    android:textColor="@color/title_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/edit_text"
+                    app:backgroundTint="@color/edit_text_tint_color"
+                    tools:ignore="LabelFor" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/edit_event_location_IMV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="15sp"
+                android:layout_marginRight="15sp"
+                android:layout_weight="0.2"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/location"
+                android:src="@mipmap/location_selected" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:baselineAligned="false"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+
+            <TextView
+                android:id="@+id/edit_start_date_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/start_date_n_time_text"
+                android:textSize="@dimen/edit_text_size" />
+
+            <EditText
+                android:id="@+id/edit_start_date_n_time_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/edit_text_tint_color"
+                android:focusable="false"
+                android:hint="@string/start_date_n_time_hint"
+                android:inputType="datetime"
+                android:singleLine="true"
+                android:textColor="@color/title_color"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/edit_text"
+                tools:ignore="LabelFor" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:baselineAligned="false"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+
+            <TextView
+                android:id="@+id/edit_end_date_n_time_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/end_date_n_time_text"
+                android:textSize="@dimen/edit_text_size" />
+
+            <EditText
+                android:id="@+id/edit_end_date_n_time_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/edit_text_tint_color"
+                android:focusable="false"
+                android:hint="@string/start_date_n_time_hint"
+                android:inputType="datetime"
+                android:singleLine="true"
+                android:textColor="@color/title_color"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/edit_text"
+                tools:ignore="LabelFor" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:baselineAligned="false">
+
+            <TextView
+                android:id="@+id/edit_invitees_TV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@mipmap/add_invitee"
+                android:drawableRight="@mipmap/add_invitee"
+                android:paddingEnd="15dip"
+                android:paddingLeft="10dip"
+                android:paddingRight="15dip"
+                android:paddingStart="10dip"
+                android:text="@string/invitees"
+                android:textSize="@dimen/edit_text_size" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/edit_invitees_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginStart="10dp"
+            android:hint="@string/invitees_hint"
+            android:singleLine="true"
+            android:textColor="@color/title_color"
+            android:textSize="@dimen/edit_text" />
+
+    </LinearLayout>
+</ScrollView>

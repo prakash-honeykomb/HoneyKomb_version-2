@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/action_bar_color">
+
+    <RelativeLayout
+        android:id="@+id/image_LL"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/banner_image"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/event_back_arrow_IMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:contentDescription="@string/events"
+            android:src="@mipmap/backarrow_white" />
+
+        <ImageView
+            android:id="@+id/edit_event_IMV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:contentDescription="@string/events"
+            android:src="@mipmap/edit" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/date_Invisible_value_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="155dp"
+        android:text="26"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_35"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/event_title_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="155dp"
+        android:layout_toRightOf="@+id/date_Invisible_value_TV"
+        android:text="@string/events"
+        android:textColor="@color/ed_title_color"
+        android:textSize="@dimen/toolbar_title_tv_size" />
+
+    <LinearLayout
+        android:id="@+id/location_TV_LL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/event_title_TV"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:text="26"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_35"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/location_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@mipmap/direction"
+            android:drawablePadding="5dp"
+            android:layout_marginLeft="5dp"
+            android:drawableRight="@mipmap/direction"
+            android:ellipsize="end"
+            android:maxLength="25"
+            android:maxLines="1"
+            android:textColor="@color/ed_title_color"
+            android:textSize="@dimen/text_size_15" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/date_RL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_TV_LL"
+        android:layout_marginTop="30dp">
+
+
+        <TextView
+            android:id="@+id/date_value_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_35" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:layout_toEndOf="@+id/date_value_TV"
+            android:layout_toRightOf="@+id/date_value_TV">
+
+            <TextView
+                android:id="@+id/month_n_year_value_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:padding="5dp"
+                android:text="@string/events"
+                android:textColor="@color/ed_title_color"
+                android:textSize="@dimen/text_size_15" />
+
+            <TextView
+                android:id="@+id/time_value_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:padding="5dp"
+                android:text="@string/events"
+                android:textColor="@color/ed_title_color"
+                android:textSize="@dimen/text_size_15" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/reminder_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:drawableEnd="@mipmap/reminder"
+            android:drawablePadding="5dp"
+            android:drawableRight="@mipmap/reminder"
+            android:gravity="center"
+            android:text="@string/events"
+            android:textColor="@color/ed_title_color"
+            android:textSize="@dimen/text_size_15" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/description_RL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date_RL"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp">
+
+        <TextView
+            android:id="@+id/invisible_view_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/zero_one"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_35"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/description_title_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_toEndOf="@+id/invisible_view_TV"
+            android:layout_toRightOf="@+id/invisible_view_TV"
+            android:padding="5dp"
+            android:text="@string/description"
+            android:textColor="@color/ed_description_color"
+            android:textSize="@dimen/text_size_15" />
+
+        <TextView
+            android:id="@+id/description_value_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/description_title_TV"
+            android:layout_gravity="start"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@+id/invisible_view_TV"
+            android:layout_toRightOf="@+id/invisible_view_TV"
+            android:ellipsize="end"
+            android:maxLines="5"
+            android:text="@string/events"
+            android:textColor="@color/ed_title_color"
+            android:textSize="@dimen/text_size_15" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/invitees_RL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description_RL"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25sp">
+
+        <TextView
+            android:id="@+id/invisible_view_new_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/zero_one"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_35"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/no_of_invitees_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_toEndOf="@+id/invisible_view_new_TV"
+            android:layout_toRightOf="@+id/invisible_view_new_TV"
+            android:padding="5dp"
+            android:text="@string/events"
+            android:textColor="@color/ed_description_color"
+            android:textSize="@dimen/text_size_15" />
+
+        <TextView
+            android:id="@+id/invitees_names_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/no_of_invitees_TV"
+            android:layout_gravity="start"
+            android:layout_toEndOf="@+id/invisible_view_new_TV"
+            android:layout_toRightOf="@+id/invisible_view_new_TV"
+            android:paddingLeft="5dp"
+            android:text="@string/events"
+            android:textColor="@color/ed_title_color"
+            android:textSize="@dimen/text_size_15" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/accept_or_decline_pending_event_LL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/invitees_RL"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="25sp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/accept_event_BTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/rounded_button"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/am_going"
+            android:textColor="@color/white"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/decline_event_BTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/rounded_button_no"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/no"
+            android:textColor="@color/button_border_color"
+            tools:ignore="ButtonStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/invitees_RL"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/cancel_BTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_button"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/decline_accepted_event_BTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_button"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/decline"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/reminder_RL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/reminder_view_expand_IMV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/reminder_time_LL"
+            android:contentDescription="@string/reminder"
+            android:src="@mipmap/reminder" />
+
+        <LinearLayout
+            android:id="@+id/reminder_time_LL"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/five_time_LL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/five_time_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:paddingRight="15dp"
+                    android:text="@string/five_mins"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/five_time_circle_TV"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/small_circle_new"
+                    android:gravity="center" />
+
+                <View
+                    android:id="@+id/five_time_VIEW"
+                    android:layout_width="50dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:background="@color/date_color" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:background="@color/date_color" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:background="@color/date_color" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:background="@color/date_color" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:background="@color/date_color" />
+
+            <LinearLayout
+                android:id="@+id/ten_time_LL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ten_time_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:paddingRight="15dp"
+                    android:text="@string/ten_mins"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/ten_time_circle_TV"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/small_circle_new"
+                    android:gravity="center" />
+
+                <View
+                    android:id="@+id/ten_time_VIEW"
+                    android:layout_width="50dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:background="@color/date_color" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:background="@color/date_color" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:background="@color/date_color" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:background="@color/date_color" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:background="@color/date_color" />
+
+            <LinearLayout
+                android:id="@+id/fifteen_time_LL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fifteen_time_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:paddingRight="15dp"
+                    android:text="@string/fifteen_mins"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/fifteen_time_circle_TV"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/small_circle_new"
+                    android:gravity="center" />
+
+                <View
+                    android:id="@+id/fifteen_time_VIEW"
+                    android:layout_width="50dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:background="@color/date_color" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:background="@color/date_color" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:background="@color/date_color" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:background="@color/date_color" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:background="@color/date_color" />
+
+            <LinearLayout
+                android:id="@+id/thirty_time_LL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/thirty_time_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:paddingRight="15dp"
+                    android:text="@string/thirty_mins"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/thirty_time_circle_TV"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/small_circle_new"
+                    android:gravity="center" />
+
+                <View
+                    android:id="@+id/thirty_time_VIEW"
+                    android:layout_width="50dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:background="@color/date_color" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:background="@color/date_color" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:background="@color/date_color" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:background="@color/date_color" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="1dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp"
+                android:background="@color/date_color" />
+
+            <LinearLayout
+                android:id="@+id/one_hour_time_LL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/one_hour_time_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:paddingRight="15dp"
+                    android:text="@string/one_hour"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/one_hour_time_circle_TV"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/small_circle_new"
+                    android:gravity="center" />
+
+                <View
+                    android:id="@+id/one_hour_time_VIEW"
+                    android:layout_width="50dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:background="@color/date_color" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/White"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <TextView
+                android:id="@+id/tittle_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/events"
+                android:textColor="@color/bar_title_color"
+                android:textSize="@dimen/text_size_22" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end">
+
+                <ImageView
+                    android:id="@+id/toolbar_calender_IMV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginRight="25dp"
+                    android:contentDescription="@string/calendar"
+                    android:src="@mipmap/calendar"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/toolbar_list_view_IMV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginRight="25dp"
+                    android:contentDescription="@string/show_event_list"
+                    android:src="@mipmap/listview" />
+
+                <ImageView
+                    android:id="@+id/toolbar_add_IMV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginRight="12dp"
+                    android:contentDescription="@string/add"
+                    android:src="@mipmap/add" />
+
+                <TextView
+                    android:id="@+id/toolbar_save_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginRight="12dp"
+                    android:text="@string/button_text_save"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/owner_name_text_size"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+</android.support.design.widget.CoordinatorLayout>

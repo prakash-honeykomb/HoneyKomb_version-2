@@ -1,0 +1,128 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.25.4'
+    }
+
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+
+android {
+
+    signingConfigs {
+        config {
+            storeFile file("C:/Program Files/Java/jdk1.8.0_151/bin/release.keystore")
+            storePassword "android"
+            keyAlias "android"
+            keyPassword "android"
+        }
+    }
+
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.honeykomb.honeykomb"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1// to be changed before app release
+        versionName "1.0.0"// to be changed before app release
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+        dexInProcess = true
+        preDexLibraries = false
+    }
+
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/ECLIPSE_.SF'
+        exclude 'META-INF/ECLIPSE_.RSA'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'se.emilsjolander:stickylistheaders:2.7.0'
+    implementation 'com.googlecode.json-simple:json-simple:1.1'
+    implementation 'com.baoyz.swipemenulistview:library:1.3.0'
+    implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
+    implementation 'com.navercorp.pulltorefresh:library:3.2.0@aar'
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.0'
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.loopj.android:android-async-http:1.4.9'
+    implementation 'com.github.curioustechizen.android-ago:library:1.3.2'
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'com.github.clans:fab:1.6.4'
+    implementation 'joda-time:joda-time:2.9.7'
+    implementation 'com.github.orangegangsters:swipy:1.2.3'
+    implementation 'com.wefika:collapse-calendar-view:0.1.0'
+    // Facebook Libraries
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.0'
+    // Android Support Libraries
+    implementation 'com.android.support:multidex:1.0.3'
+    androidTestImplementation 'com.android.support:multidex:1.0.3'
+    androidTestImplementation 'com.android.support:multidex-instrumentation:1.0.3'
+    implementation 'com.github.johnkil.android-robototextview:robototextview:4.0.0'
+    // Google Libraries
+    implementation 'com.google.firebase:firebase-messaging:17.1.0'
+    implementation 'com.google.firebase:firebase-crash:16.0.1'
+    //    implementation 'com.google.android.gms:play-services-ads:10.0.1'
+    implementation 'com.google.android.gms:play-services-auth:15.0.1'
+    implementation 'com.google.android.gms:play-services-gcm:15.0.1'
+    implementation 'com.google.android.gms:play-services-places:15.0.1'
+    implementation 'com.google.android.gms:play-services-analytics:16.0.1'
+    implementation 'com.google.android.gms:play-services-maps:15.0.1'
+    implementation 'com.google.android.gms:play-services-identity:15.0.1'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
+    implementation 'com.google.firebase:firebase-auth:16.0.2'
+    //    implementation 'com.google.firebase:firebase-auth:11.0.4'
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-messaging:17.1.0'
+    implementation 'com.firebaseui:firebase-ui-auth:2.1.0'
+    implementation 'joda-time:joda-time:2.9.7'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation project(':libraryCV')
+    implementation project(':polygonimageviewNew')
+    /*date time picker lib*/
+    implementation project(':slideDateTimePicker')
+    implementation files('libs/commons-io-2.4.jar')
+
+}
+apply plugin: 'com.google.gms.google-services'

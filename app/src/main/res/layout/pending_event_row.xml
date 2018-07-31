@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/card_view_bg"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="1dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:id="@+id/pending_inv_RL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/pending_inv_view_bg"
+            android:padding="15dp">
+
+            <RelativeLayout
+                android:id="@+id/date_LL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/start_date_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/c_four_c_four"
+                    android:textSize="@dimen/text_size_14" />
+
+                <TextView
+                    android:id="@+id/start_time_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/start_date_TV"
+                    android:textColor="@color/date_color"
+                    android:textSize="@dimen/text_size_14" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/close_LL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true">
+
+                <ImageView
+                    android:id="@+id/close_view_IMV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@mipmap/down_arrow" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/event_title_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/date_LL"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/owner_name_text_size" />
+
+            <TextView
+                android:id="@+id/location_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/event_title_TV"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:drawableLeft="@mipmap/location"
+                android:drawablePadding="5dp"
+                android:drawableStart="@mipmap/location"
+                android:singleLine="true"
+                android:textColor="@color/c_four_c_four" />
+
+            <LinearLayout
+                android:id="@+id/invitation_status_LL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/location_TV"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/accept_BTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/rounded_button_no_new"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/am_going"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/text_size_12" />
+
+                <Button
+                    android:id="@+id/decline_BTN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:background="@drawable/rounded_button_no_new"
+                    android:text="@string/no"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_12" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</android.support.v7.widget.CardView>

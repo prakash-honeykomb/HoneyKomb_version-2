@@ -1,0 +1,95 @@
+{
+  "project_info": {
+    "project_number": "606430755411",
+    "firebase_url": "https://honeykomb-new.firebaseio.com",
+    "project_id": "honeykomb-new",
+    "storage_bucket": "honeykomb-new.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606430755411:android:01c2732a903307f3",
+        "android_client_info": {
+          "package_name": "com.honeykomb.honeykomb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606430755411-n3ss7m7cv171al3g9242v9p29tv8cd0s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.honeykomb.honeykomb",
+            "certificate_hash": "ad8e5df8443d30623710717ba689b606871d54f1"
+          }
+        },
+        {
+          "client_id": "606430755411-tnhdkug9nhnj2ao8v81sh9js7rrha9gr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.honeykomb.honeykomb",
+            "certificate_hash": "40392ea29378c5f0015eed9793f34ad4c3592cb7"
+          }
+        },
+        {
+          "client_id": "606430755411-ihsilsqprsgnuit1m5tkr6jmntg403v6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.honeykomb.honeykomb",
+            "certificate_hash": "4022b8b7826c6b91eb5f07d2dae0c9a5b7a52f1c"
+          }
+        },
+        {
+          "client_id": "606430755411-k5lhlcrn4pglfl8u8aho5h70pnketule.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.honeykomb.honeykomb",
+            "certificate_hash": "abf923ba510a1597e7f16397c02406d2a63d8910"
+          }
+        },
+        {
+          "client_id": "606430755411-qvtoeu6d8ufp0sr18mi93s10g98va6g2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.honeykomb.honeykomb",
+            "certificate_hash": "554ef1d8213600c78e73ac0b172161d730a30870"
+          }
+        },
+        {
+          "client_id": "606430755411-83aqpckfuu4lu0hl9vd2bvh8srl0dap5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.honeykomb.honeykomb",
+            "certificate_hash": "055627ced45d5f88b7d3867adf199d6ad9c018be"
+          }
+        },
+        {
+          "client_id": "606430755411-ufvltuup52rtaq880t769gttjlkbu9g3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpHJMXKXsE5CGSrjRbDXmmGPCj5okfhXw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606430755411-ufvltuup52rtaq880t769gttjlkbu9g3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

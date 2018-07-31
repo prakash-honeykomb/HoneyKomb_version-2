@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/ll_all_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bar_color">
+
+        <ImageView
+            android:id="@+id/done_IMV"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:src="@drawable/done" />
+
+        <ImageView
+            android:id="@+id/iv_select_invitees"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:src="@mipmap/invitees" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:background="@color/headerTextSelected"
+        android:gravity="left"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:text="Selected Contacts"
+        android:textColor="@color/header"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/header" />
+
+    <ListView
+        android:id="@+id/ll_selected_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_all_contacts"
+        android:gravity="center|top"
+        android:orientation="vertical" />
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary_pink">#F59293</color>
+    <color name="primary_orange">#ff9500</color>
+    <color name="colorAccent">#FF8F15</color>
+    <color name="primary_blue">#4B9DD6</color>
+    <color name="primary_green">#2CB4B4</color>
+    <color name="header_textColor">#999999</color>
+    <color name="view_divider">#cccccc</color>
+    <color name="headerTextSelected">#ff9500</color>
+    <color name="week_days_color">#9B9B9B</color>
+    <color name="month_date_color">#1D1D26</color>
+    <color name="eventtextblack">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="bar_title_color">#545454</color>
+    <color name="notification_view_color">#FFE6E4E4</color>
+</resources>

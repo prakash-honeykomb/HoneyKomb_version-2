@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:padding="5dp"
+            android:src="@mipmap/default_icon" />
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/welcome"
+            android:textColor="@color/title_color"
+            android:textSize="22sp" />
+
+
+        <LinearLayout
+            android:id="@+id/terms_condition_LL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_terms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/termsconditions"
+                android:textColor="@color/title_color"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/auth_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorAccent"
+                android:padding="5dp"
+                android:text="@string/agree"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/phone_auth_LL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <RelativeLayout
+                style="@style/FirebaseUI.WrapperStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.firebase.ui.auth.ui.phone.CountryListSpinner
+                    android:id="@+id/country_list"
+                    style="@style/FirebaseUI.CountrySpinner" />
+
+                <EditText
+                    android:id="@+id/phone_number"
+                    style="@style/FirebaseUI.TextInputEditText.PhoneField"
+                    android:layout_alignBaseline="@id/country_list"
+                    android:layout_gravity="end"
+                    android:layout_toEndOf="@id/country_list"
+                    android:layout_toRightOf="@id/country_list" />
+
+                <TextView
+                    android:id="@+id/phone_number_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignLeft="@id/phone_number"
+                    android:layout_alignStart="@id/phone_number"
+                    android:layout_below="@id/phone_number"
+                    android:paddingEnd="2dp"
+                    android:paddingStart="2dp"
+                    android:text=""
+                    android:textColor="@color/errorColor" />
+
+                <Button
+                    android:id="@+id/send_code"
+                    style="@style/FirebaseUI.VerifyPhoneButton"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/phone_number_error"
+                    android:text="@string/verify_phone_number" />
+
+                <TextView
+                    android:id="@+id/send_sms_tos"
+                    style="@style/FirebaseUI.Text.BodyText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/send_code"
+                    android:layout_marginTop="@dimen/field_padding_vert"
+                    android:textColor="?android:textColorTertiary"
+                    android:textIsSelectable="true" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

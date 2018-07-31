@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="FirebaseLoginTheme" parent="FirebaseUI">
+        <item name="android:textColorPrimary">#313131</item>
+        <item name="android:textColorSecondary">@android:color/darker_gray</item>
+        <item name="android:textColorLink">#ffad33</item>
+        <item name="colorAccent">#ffad33</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">@android:color/darker_gray</item>
+        <item name="colorControlHighlight">@android:color/darker_gray</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:windowBackground">@mipmap/new_sp</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textColorHint">@android:color/white</item>
+    </style>
+</resources>

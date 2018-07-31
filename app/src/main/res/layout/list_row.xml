@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <net.grobas.view.PolygonImageView
+            android:id="@+id/polygonImage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:layout_gravity="center"
+            android:src="@mipmap/user_old"
+            android:background="@android:color/white"
+            app:poly_border="true"
+            app:poly_border_color="@android:color/white"
+            app:poly_border_width="5dp"
+            app:poly_corner_radius="5"
+            app:poly_rotation_angle="60"
+            app:poly_vertices="6" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@+id/contactcheck"
+            android:layout_toRightOf="@+id/contactimage"
+            android:layout_weight="0.8">
+
+            <TextView
+                android:id="@+id/contactname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="Contact Name"
+                android:textColor="#000"
+                android:textIsSelectable="false"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_name_hkid"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_below="@+id/contactname"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/contactno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:singleLine="true"
+                    android:text="09876543210"
+                    android:textColor="#2689e0"
+                    android:textIsSelectable="false"
+                    android:textSize="12sp" />
+
+                <View
+                    android:id="@+id/v_hkid"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="5dp"
+                    android:layout_toRightOf="@+id/contactno"
+                    android:background="@color/header_textColor"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_hkid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/v_hkid"
+                    android:layout_toRightOf="@+id/v_hkid"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="#2689e0"
+                    android:textIsSelectable="false"
+                    android:textSize="12sp" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <CheckBox
+            android:id="@+id/contactcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="8dp"
+            android:buttonTint="@color/headerTextSelected" />
+    </LinearLayout>
+</RelativeLayout>

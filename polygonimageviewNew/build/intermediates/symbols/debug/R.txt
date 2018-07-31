@@ -1,0 +1,20 @@
+int attr poly_border 0x7f040001
+int attr poly_border_color 0x7f040002
+int attr poly_border_width 0x7f040003
+int attr poly_corner_radius 0x7f040004
+int attr poly_rotation_angle 0x7f040005
+int attr poly_shadow 0x7f040006
+int attr poly_shadow_color 0x7f040007
+int attr poly_vertices 0x7f040008
+int attr polygonImageViewStyle 0x7f040009
+int[] styleable PolygonImageView { 0x7f040001, 0x7f040002, 0x7f040003, 0x7f040004, 0x7f040005, 0x7f040006, 0x7f040007, 0x7f040008 }
+int styleable PolygonImageView_poly_border 0
+int styleable PolygonImageView_poly_border_color 1
+int styleable PolygonImageView_poly_border_width 2
+int styleable PolygonImageView_poly_corner_radius 3
+int styleable PolygonImageView_poly_rotation_angle 4
+int styleable PolygonImageView_poly_shadow 5
+int styleable PolygonImageView_poly_shadow_color 6
+int styleable PolygonImageView_poly_vertices 7
+int[] styleable PolygonImageViewTheme { 0x7f040009 }
+int styleable PolygonImageViewTheme_polygonImageViewStyle 0
