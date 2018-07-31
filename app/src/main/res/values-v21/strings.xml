@@ -77,5 +77,7 @@
     <string name="zero_one">01</string>
     <string name="edit_event">Edit event</string>
     <string name="canceled_event">Canceled event</string>
+    <string name="continuee">CONTINUE</string>
+    <string name="displayname">Enter your display name</string>
 
 </resources>
