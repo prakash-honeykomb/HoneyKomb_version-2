@@ -90,6 +90,44 @@
             android:background="@color/transparent_white" />
 
         <LinearLayout
+            android:id="@+id/nav_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_weight="0.2"
+                android:contentDescription="@string/list"
+                android:src="@mipmap/lists" />
+
+            <TextView
+                android:id="@+id/fav_group_menu_TV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_weight="0.8"
+                android:text="Favorite Groups"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_17" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="220dp"
+            android:layout_height="0.2dp"
+            android:layout_gravity="center"
+            android:background="@color/transparent_white" />
+
+        <LinearLayout
             android:id="@+id/nav_terms"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

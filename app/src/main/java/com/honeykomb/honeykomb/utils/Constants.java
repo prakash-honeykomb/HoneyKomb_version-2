@@ -27,6 +27,7 @@ public class Constants {
     public static final String CONTACT_HKID_OBJECT_KEY = "contacthkID";
     public static final String CONTACT_HK_UUID_OBJECT_KEY = "contacthkUUID";
     public static final String ACTIVITY_ID = "activityID";
+    public static final String GROUP_ID = "groupID";
     public static final String ACTIVITY_DATE_ID = "activityDateID";
     public static final String ACTIVITY_OWNER = "activityOwner";
     public static int GROUP_INVITEES_SIZE = 1;
@@ -58,4 +59,10 @@ public class Constants {
     public static final String Service_Name_GET_ALL_Activity = "USERSACTIVITY";
     public static final String Service_Name_Notifications = "NOTIFICATIONS";
     public static final String Service_Name_Contact_List = "CONTACTLIST";
+
+    public static final String UPDATE_GROUP = "updateGroup";
+
+    public static final String CREATE_GROUP = "createGroup";
+
+    public static final String CREATE_OR_UPDATE_GROUP = "createUpdateGroup";
 }

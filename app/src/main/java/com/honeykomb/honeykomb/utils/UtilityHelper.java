@@ -887,6 +887,21 @@ public class UtilityHelper {
         return cursor;
     }
 
+    public static Cursor getCursorWithFilterGroup(Context context, String strItemCode, ArrayList<SelectedContactObject> selectedContactObjects) {
+        ArrayList<String> numberList = new ArrayList<String>();
+        for (SelectedContactObject selectedContactObject : selectedContactObjects) {
+            numberList.add("'" + selectedContactObject.getNumber() + "'");
+        }
+        String inClause = numberList.toString();
+
+        inClause = inClause.replace("[", "(");
+        inClause = inClause.replace("]", ")");
+        Log.e("inClause", " = " + inClause);
+
+        Cursor cursor = Util._db.getCursorWithFilterGroup(inClause, strItemCode);
+        return cursor;
+    }
+
     public static Cursor getCursor(Context context, ArrayList<SelectedContactObject> selectedContactObjects) {
         ArrayList<String> numberList = new ArrayList<String>();
         for (SelectedContactObject selectedContactObject : selectedContactObjects) {

@@ -1,29 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/actionbar"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/White"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <TextView
+                android:id="@+id/tittle_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Invitees"
+                android:textColor="@color/bar_title_color"
+                android:textSize="@dimen/text_size_22" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end">
+
+                <ImageView
+                    android:id="@+id/toolbar_calender_IMV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginRight="25dp"
+                    android:contentDescription="@string/calendar"
+                    android:src="@mipmap/calendar"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/toolbar_list_view_IMV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:visibility="gone"
+                    android:layout_marginRight="25dp"
+                    android:contentDescription="@string/show_event_list"
+                    android:src="@mipmap/listview" />
+
+                <ImageView
+                    android:id="@+id/toolbar_add_IMV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:visibility="gone"
+                    android:layout_marginRight="15dp"
+                    android:contentDescription="@string/add"
+                    android:src="@mipmap/addgroup" />
+
+                <TextView
+                    android:id="@+id/toolbar_save_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginRight="12dp"
+                    android:text="@string/button_text_done"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/owner_name_text_size"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
     <LinearLayout
         android:id="@+id/ll_contact_search"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/new_contact_bg"
+        android:background="@color/white"
+        android:layout_below="@+id/actionbar"
         android:orientation="horizontal"
         android:weightSum="6">
 
         <FrameLayout
             android:id="@+id/frag"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:layout_weight="1">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/input_search"
                 android:layout_width="fill_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@android:color/transparent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/body_padding_bottom"
+                android:layout_marginLeft="@dimen/activity_margin"
+
+                android:layout_marginRight="@dimen/activity_margin"
+                android:background="@drawable/border_edittext"
+                android:drawableLeft="@drawable/places_ic_search"
+                android:drawableStart="@drawable/places_ic_search"
                 android:hint="@string/search_contact_hint"
-                android:textAlignment="center"
+                android:paddingBottom="10dp"
+                android:paddingLeft="@dimen/body_padding_bottom"
+                android:paddingRight="@dimen/body_padding_bottom"
+                android:paddingStart="@dimen/body_padding_bottom"
+                android:paddingTop="10dp"
                 android:textColor="@color/header_textColor"
                 android:textCursorDrawable="@drawable/custom_edit_text_cursor"
                 android:textSize="18sp" />
@@ -50,6 +131,7 @@
             android:background="@null"
             android:clickable="true"
             android:gravity="center"
+            android:visibility="gone"
             android:scaleType="center"
             android:src="@mipmap/ic_done" />
     </LinearLayout>

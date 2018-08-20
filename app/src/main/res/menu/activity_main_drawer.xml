@@ -17,6 +17,11 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/list" />
         <item
+            android:id="@+id/nav_group"
+            android:visible="false"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Favorite Groups" />
+        <item
             android:id="@+id/nav_terms"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/terms_of_use" />

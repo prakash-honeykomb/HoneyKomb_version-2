@@ -1,37 +1,37 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
-INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
-INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
-INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
-INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
-INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
-INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
+ADDED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
 	package
-		ADDED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml:2:5-30
-		INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
-		INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
+		ADDED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml:2:5-30
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
-		ADDED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
-		INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
+		ADDED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
-		ADDED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
-		INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
+		ADDED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml:1:1-6:12
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml:1:11-69
+		ADDED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml:1:11-69
 uses-sdk
-INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
-INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
-INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
-INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
-		ADDED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
-		INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
+		ADDED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
-		ADDED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
-		INJECTED from D:\HoneyKombNew\polygonimageviewNew\src\main\AndroidManifest.xml
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
+		ADDED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\AndroidManifest.xml

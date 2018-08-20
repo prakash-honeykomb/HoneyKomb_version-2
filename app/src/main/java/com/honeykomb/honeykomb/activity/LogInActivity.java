@@ -43,7 +43,7 @@ public class LogInActivity extends BaseActivity implements View.OnClickListener 
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+  //  super.onActivityResult(requestCode, resultCode, data);
         if (data != null && data.getExtras() != null) {
             Bundle bundle1 = data.getExtras();
             progressDialog = new ProgressDialog(LogInActivity.this);

@@ -25,6 +25,7 @@ import com.azurechen.fcalendar.data.CalendarAdapter;
 import com.azurechen.fcalendar.data.Day;
 import com.azurechen.fcalendar.widget.FlexibleCalendar;
 import com.honeykomb.honeykomb.R;
+import com.honeykomb.honeykomb.adapters.EventListRCVAdapter;
 import com.honeykomb.honeykomb.adapters.EventRCVAdapter;
 import com.honeykomb.honeykomb.adapters.PendingEventRCVAdapter;
 import com.honeykomb.honeykomb.dao.ActivityDetails;
@@ -52,6 +53,7 @@ public class MainScreen extends BaseActivity implements AppListeners.OnItemClick
 //    private FrameLayout pendingInvitationsFL;
     private int pendingInvCount;
     private EventRCVAdapter eventRCVAdapter;
+    private EventListRCVAdapter eventListRCVAdapter;
     private String TAG = MainScreen.class.getSimpleName();
     private Animation slide_down, slide_up;
 
@@ -217,10 +219,10 @@ public class MainScreen extends BaseActivity implements AppListeners.OnItemClick
         Log.i(TAG, "listOfEvent size in CALENDAR = " + listOfEvent.size());
 
         eventRCV.setHasFixedSize(true);
-        eventRCVAdapter = new EventRCVAdapter(MainScreen.this, listOfEvent);
-        eventRCVAdapter.setClickListener(this);
+        eventListRCVAdapter = new EventListRCVAdapter(MainScreen.this, listOfEvent);
+        eventListRCVAdapter.setClickListener(this);
         eventRCV.setLayoutManager(new LinearLayoutManager(MainScreen.this));
-        eventRCV.setAdapter(eventRCVAdapter);
+        eventRCV.setAdapter(eventListRCVAdapter);
 
         pendingInvCount = Util._db.getPendingInvitationsCount(hK_UUID);
         pendingInvitationCountTV.setText(String.valueOf(pendingInvCount));
@@ -365,7 +367,7 @@ public class MainScreen extends BaseActivity implements AppListeners.OnItemClick
     public void onRefresh(Object object) {
         String result = (String) object;
         if (result.equalsIgnoreCase("collapseView")) {
-          collapsePendingView();
+            collapsePendingView();
         } else {
             setViews();
         }

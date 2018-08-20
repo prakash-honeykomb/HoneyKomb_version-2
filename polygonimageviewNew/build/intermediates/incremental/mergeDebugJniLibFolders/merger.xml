@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\HoneyKombNew\polygonimageviewNew\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="D:\HoneyKombNew\polygonimageviewNew\src\debug\jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\polygonimageviewNew\src\debug\jniLibs"/></dataSet></merger>

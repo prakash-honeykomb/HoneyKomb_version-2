@@ -1,25 +1,25 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml:3:1-11:12
-INJECTED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml:3:1-11:12
-INJECTED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml:3:1-11:12
+ADDED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml:3:1-11:12
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml:3:1-11:12
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml:3:1-11:12
 	package
-		ADDED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml:5:5-52
-		INJECTED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml
-		INJECTED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml
+		ADDED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml:5:5-52
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml:4:5-63
+		ADDED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml:4:5-63
 uses-sdk
-ADDED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml:7:5-9:41
-INJECTED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml:7:5-9:41
-INJECTED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml:7:5-9:41
-INJECTED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml:7:5-9:41
-INJECTED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml:7:5-9:41
+ADDED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml:7:5-9:41
 	android:targetSdkVersion
-		ADDED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml:9:9-38
-		INJECTED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml
-		INJECTED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml
+		ADDED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml:9:9-38
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml:8:9-35
-		INJECTED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml
-		INJECTED from D:\HoneyKombNew\slideDateTimePicker\src\main\AndroidManifest.xml
+		ADDED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml:8:9-35
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml
+		INJECTED from D:\honeykomb\HoneykombV2-31-July-2018\HoneyKomb_version-2\slideDateTimePicker\src\main\AndroidManifest.xml

@@ -32,7 +32,9 @@
     </string>
     <string name="SENDER_ID">606430755411</string>
     <string name="try_again">Try Again</string>
-    <string name="got_it">Got it!</string><string name="events">Events</string>
+    <string name="got_it">Got it!</string>
+    <string name="events">Events</string>
+    <string name="group">Groups</string>
     <string name="plus_image">Plus Image</string>
     <string name="minus_image">Minus Image</string>
     <string name="date">Date</string>
@@ -76,5 +78,7 @@
     <string name="zero_one">01</string>
     <string name="edit_event">Edit event</string>
     <string name="canceled_event">Canceled event</string>
+    <string name="groups">Favorite Groups</string>
+    <string name="button_text_done">Done</string>
 
 </resources>

@@ -87,7 +87,11 @@ public class VerifyNonHKUsers extends AsyncTask<String, Void, String> {
             ActivityDetails activityDetails = Util._db.getActivityDetailsBasedOnActvityID(activityID);
             for (NonHKContact hkContact : contactList) {
                 String UniqueID = UUID.randomUUID().toString();
-                Util._db.saveUserWithDBasParams(UniqueID,/* db,*/ Integer.parseInt(activityDetails.getQuickbloxGroupID()), hkContact.hKID, "ADD", "NO");
+                 if(!activityDetails.getQuickbloxGroupID().equalsIgnoreCase(" "))
+                 Util._db.saveUserWithDBasParams(UniqueID,/* db,*/ Integer.parseInt(activityDetails.getQuickbloxGroupID()), hkContact.hKID, "ADD", "NO");
+                 else
+                     Util._db.saveUserWithDBasParams(UniqueID,/* db,*/ 0, hkContact.hKID, "ADD", "NO");
+
             }
             /*Bundle bundle = new Bundle();
             bundle.putSerializable("createUserList", (ArrayList<NonHKContact>) contactList);

@@ -27,6 +27,7 @@
     <color name="edit_text_hint_color">#828282</color>
     <color name="edit_text_tint_color">#999999</color>
     <color name="bar_color">#d0d0d0</color>
+    <color name="list_row_time_color">#e8eaf7</color>
     <color name="color_username_rectangle">#99000000</color>
     <color name="new_contact_bg">#EFF0F1</color>
     <color name="lv_divider_color">#cccccc</color>

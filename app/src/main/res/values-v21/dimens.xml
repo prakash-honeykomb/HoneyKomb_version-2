@@ -17,4 +17,5 @@
     <dimen name="text_size_35">35sp</dimen>
     <dimen name="text_size_17">17sp</dimen>
     <dimen name="text_size_22">22sp</dimen>
+    <dimen name="time_name_text_size">15sp</dimen>
 </resources>

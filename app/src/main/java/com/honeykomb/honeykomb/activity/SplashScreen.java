@@ -21,6 +21,7 @@ import com.honeykomb.honeykomb.service.GetContactsFromServer;
 import com.honeykomb.honeykomb.service.SendAllActivityToServer;
 import com.honeykomb.honeykomb.service.SendOverDueActivities;
 import com.honeykomb.honeykomb.utils.Constants;
+import com.honeykomb.honeykomb.utils.ContactWatchService;
 import com.honeykomb.honeykomb.utils.Util;
 
 import java.io.File;
@@ -30,6 +31,8 @@ import static java.lang.System.out;
 public class SplashScreen extends Activity {
     private String TAG = SplashScreen.class.getSimpleName();
 
+    //added on 18 aug
+    public final static int MY_PERMISSIONS_READ_CONTACTS = 0x1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,13 +64,18 @@ public class SplashScreen extends Activity {
                         startService(i);
                         registerUser();
                     } else {
+
                         Intent i = new Intent(Intent.ACTION_SYNC, null, getApplicationContext(), GetContactsFromServer.class);
                         getApplicationContext().startService(i);
+                        startContactLookService();
+
                         goToMainScreen();
                     }
                 }
             }, SPLASH_DISPLAY_LENGTH);
         }
+        //added on 18 aug 2018
+
     }
 
     private void registerUser() {
@@ -149,6 +157,8 @@ public class SplashScreen extends Activity {
                     startService(i);
                     registerUser();
                 } else {
+                    Intent j = new Intent(Intent.ACTION_SYNC, null, SplashScreen.this, ContactsService.class);
+                    startService(j);
                     Intent i = new Intent(Intent.ACTION_SYNC, null, getApplicationContext(), GetContactsFromServer.class);
                     getApplicationContext().startService(i);
                     goToMainScreen();
@@ -157,9 +167,11 @@ public class SplashScreen extends Activity {
                 Toast.makeText(SplashScreen.this, getResources().getString(R.string.need_permission), Toast.LENGTH_SHORT).show();
                 finish();
             }
-
+//             if (requestCode == MY_PERMISSIONS_READ_CONTACTS && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                startContactLookService();
+//            }
         }
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+     //   super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
     public void initDB(Context ctx) {
         try {
@@ -175,4 +187,27 @@ public class SplashScreen extends Activity {
             Log.e(TAG, " Exception = " + e.getMessage());
         }
     }
+
+    //added on 18 aug
+    private void startContactLookService() {
+//        try {
+//            if (ActivityCompat.checkSelfPermission(SplashScreen.this,
+//                    Manifest.permission.READ_CONTACTS)
+//                    == PackageManager.PERMISSION_GRANTED) {//Checking permission
+//                //Starting service for registering ContactObserver
+//                Intent intent = new Intent(SplashScreen.this, ContactWatchService.class);
+//                startService(intent);
+//            } else {
+//                //Ask for READ_CONTACTS permission
+//                ActivityCompat.requestPermissions(SplashScreen.this, new String[]{Manifest.permission.READ_CONTACTS}, MY_PERMISSIONS_READ_CONTACTS);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+       // Util.requestReadContactsPermission(getBaseContext());
+        Intent intent = new Intent(SplashScreen.this, ContactWatchService.class);
+                startService(intent);
+    }
+
+
 }

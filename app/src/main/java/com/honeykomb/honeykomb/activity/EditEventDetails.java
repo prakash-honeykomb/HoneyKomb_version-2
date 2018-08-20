@@ -593,7 +593,7 @@ public class EditEventDetails extends BaseActivity implements LocationInterface 
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+       // super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case (CONTACTS_FROM_LIST): {
                 if (resultCode == Activity.RESULT_OK) {

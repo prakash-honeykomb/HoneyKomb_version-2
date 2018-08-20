@@ -47,6 +47,12 @@ public class ContactObject implements Parcelable {
         userStatus = "";
     }
 
+    public ContactObject(String contactName, String contactNo, String hkID) {
+        this.contactName = contactName;
+        this.contactNo = contactNo;
+        this.hkID = hkID;
+    }
+
     public ContactObject(Parcel in) {
         contactName = in.readString();
         contactNo = in.readString();

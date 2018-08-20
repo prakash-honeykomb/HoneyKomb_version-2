@@ -8,7 +8,9 @@
     <permission
         android:name="com.honeykomb.honeykomb.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
+
     <uses-permission android:name="com.honeykomb.honeykomb.permission.MAPS_RECEIVE" />
+
     <permission
         android:name="com.honeykomb.honeykomb.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
@@ -29,7 +31,7 @@
         android:name="android.permission.INTERACT_ACROSS_USERS_FULL"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.GET_TASKS" />
-    <!--<uses-permission android:name="com.honeykomb.honeykomb.permission.C2D_MESSAGE" />-->
+    <!-- <uses-permission android:name="com.honeykomb.honeykomb.permission.C2D_MESSAGE" /> -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -43,28 +45,24 @@
     <uses-permission
         android:name="android.permission.READ_LOGS"
         tools:ignore="ProtectedPermissions" />
-
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.READ_SMS" />
-
     <uses-permission android:name="android.hardware.camera.autofocus" />
 
-    <!--<uses-permission android:name="com.honeykomb.honeykomb.permission.MAPS_RECEIVE" />-->
-
+    <!-- <uses-permission android:name="com.honeykomb.honeykomb.permission.MAPS_RECEIVE" /> -->
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:hardwareAccelerated="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <receiver
-            android:name="com.honeykomb.honeykomb.service.NetworkChangeReceiver"
+            android:name=".service.NetworkChangeReceiver"
             android:enabled="true">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
@@ -78,6 +76,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -85,153 +84,127 @@
             android:name=".activity.LogInActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".activity.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".activity.MainScreen"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden"
-            android:theme="@style/AppTheme.NoActionBar" />
-
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activity.SignUpName"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
-            android:name="com.honeykomb.honeykomb.activity.HKAnimationNew"
+            android:name=".activity.HKAnimationNew"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
-            android:name="com.honeykomb.honeykomb.activity.AddEventActivity"
+            android:name=".activity.AddEventActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
-            android:name="com.honeykomb.honeykomb.activity.NotificationsActivity"
+            android:name=".activity.NotificationsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
-            android:name="com.honeykomb.honeykomb.activity.DemoActivity"
+            android:name=".activity.DemoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
-
         <activity
-            android:name="com.honeykomb.honeykomb.utils.NotificationReceiverActivity"
+            android:name=".utils.NotificationReceiverActivity"
             android:theme="@style/Theme.UserDialog" />
-
         <activity
-            android:name="com.honeykomb.honeykomb.activity.EventDetails"
+            android:name=".activity.EventDetails"
             android:launchMode="singleTask"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait" />
-
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.honeykomb.honeykomb.activity.ContactSelected"
+            android:name=".activity.ContactSelected"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-
         <activity
-            android:name="com.honeykomb.honeykomb.activity.Contact"
+            android:name=".activity.Contact"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-
         <activity
-            android:name="com.honeykomb.honeykomb.activity.SelectedListOfInvitees"
+            android:name=".activity.SelectedListOfInvitees"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-
-
         <activity
-            android:name="com.honeykomb.honeykomb.activity.EditEventDetails"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity
-            android:name="com.honeykomb.honeykomb.activity.EventLocationMapView"
+            android:name=".activity.EditEventDetails"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.honeykomb.honeykomb.activity.TermsOfUseActivity"
+            android:name=".activity.EventLocationMapView"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
-            android:name="com.honeykomb.honeykomb.activity.PrivacyPolicy"
+            android:name=".activity.TermsOfUseActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.PrivacyPolicy"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <!--Fabric Api keys-->
+        <!-- Fabric Api keys -->
 
         <meta-data
-            tools:replace="android:value"
             android:name="io.fabric.ApiKey"
-            android:value="d23911c9bf12ff9dc648fea0ea7131a710487c06" />
+            android:value="d23911c9bf12ff9dc648fea0ea7131a710487c06"
+            tools:replace="android:value" />
         <meta-data
             android:name="io.fabric.ApiSecret"
             android:value="aca25dd9fc40342b66a862d2b99ea66473665ec94cedd590a5befeaf442aef66" />
-
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@mipmap/launch" />
-
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/headerTextSelected" />
 
-        <!--geo location enable api key-->
+        <!-- geo location enable api key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBQ8rNKGBD_15-Z7_CozbV1afhN7W4Co9w" />
-
         <meta-data
             android:name="com.package.name"
             android:value="${applicationId}" />
 
         <!-- Firebase Notifications -->
-        <service android:name="com.honeykomb.honeykomb.firebase.HKFirebaseMessagingService">
+        <service android:name=".firebase.HKFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-        <service android:name="com.honeykomb.honeykomb.firebase.HKFirebaseInstanceIdService">
+        <service android:name=".firebase.HKFirebaseInstanceIdService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
         <service
-            android:name="com.honeykomb.honeykomb.service.SendAllActivityToServer"
-            android:exported="false" />
-
-        <service
-            android:name="com.honeykomb.honeykomb.service.IntentServiceForNotification"
+            android:name=".service.SendAllActivityToServer"
             android:exported="false" />
         <service
-            android:name="com.honeykomb.honeykomb.service.GetContactsFromServer"
+            android:name=".service.IntentServiceForNotification"
             android:exported="false" />
-
         <service
-            android:name="com.honeykomb.honeykomb.service.ContactsService"
+            android:name=".service.GetContactsFromServer"
             android:exported="false" />
-
         <service
-            android:name="com.honeykomb.honeykomb.service.SendOverDueActivities"
+            android:name=".service.ContactsService"
+            android:exported="false" />
+        <service
+            android:name=".service.SendOverDueActivities"
             android:exported="false" />
 
         <receiver
@@ -244,6 +217,20 @@
             </intent-filter>
         </receiver>
 
+        <activity
+            android:name=".activity.FAVGroup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.AddGroup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FAVGroupDetails"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.ImageCropping"></activity>
+        <service
+            android:name=".utils.ContactWatchService"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -1,0 +1,195 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:swipe="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="7dp"
+    android:layout_marginRight="7dp"
+    android:layout_marginTop="5dp"
+    android:background="#eaeaea"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_agenda_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/small_circle"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/small_circle" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toEndOf="@+id/small_circle"
+            android:layout_toRightOf="@+id/small_circle"
+            android:textColor="@color/date_color"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_date_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toEndOf="@+id/tv_date"
+            android:layout_toRightOf="@+id/tv_date"
+            android:textColor="@color/date_color"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+    <com.daimajia.swipe.SwipeLayout
+        android:id="@+id/swipeInvitee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        swipe:leftEdgeSwipeOffset="0dp"
+        swipe:rightEdgeSwipeOffset="0dp">
+
+    <LinearLayout
+        android:id="@+id/ll_delete_invitee"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF5534"
+        android:gravity="center_vertical"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/iv_delete_invitee"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:src="@mipmap/delete" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_contact_reinvite"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/GREEN"
+        android:gravity="right"
+        android:tag="Bottom3"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/iv_contact_reinvite"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_weight="0.2"
+            android:src="@mipmap/reinvite" />
+    </LinearLayout>
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        card_view:cardCornerRadius="1dp"
+        card_view:cardElevation="1dp">
+
+        <LinearLayout
+            android:id="@+id/event_list_RL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/card_view_bg">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:id="@+id/time_LL"
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+
+
+                    android:background="@mipmap/default_group"
+                    android:gravity="center"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/event_time_TV"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:textColor="@color/date_color"
+                        android:textSize="@dimen/time_name_text_size" />
+
+                    <TextView
+                        android:id="@+id/event_time_AM_PM_TV"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/edit_text_tint_color"
+                        android:textSize="@dimen/time_name_text_size"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/title_LL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:orientation="vertical"
+
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp">
+
+                    <TextView
+                        android:id="@+id/group_title_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="1dp"
+                        android:text="Title"
+
+                        android:textColor="@color/title_color"
+                        android:textSize="@dimen/edit_text_size" />
+
+                    <TextView
+                        android:id="@+id/group_members_TV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+
+                        android:drawablePadding="5dp"
+                        android:singleLine="true"
+                        android:text="Location"
+                        android:textColor="@color/location_text_color"
+
+                        android:textSize="@dimen/edit_text_size" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    </android.support.v7.widget.CardView>
+    </com.daimajia.swipe.SwipeLayout>
+</LinearLayout>

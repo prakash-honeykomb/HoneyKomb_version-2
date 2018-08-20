@@ -375,6 +375,9 @@ public class AddEventActivity extends BaseActivity implements LocationInterface 
         hK_UUID = sp.getString(Constants.HK_UUID, "");
 
         Constants.GROUP_INVITEES_SIZE = groupInvitees.size();
+        Log.i(TAG, " ******************create activity bundle **************=\n"  + bundle);
+        Log.i(TAG, "******************* create activity groupInvitees =***************\n"  + groupInvitees.size());
+
         Util._db.createActivity(bundle, groupInvitees.size());
         Util._db.createActivityForChatIcon(bundle, groupInvitees.size(), "");
         if (UtilityHelper.checkConnectivity(AddEventActivity.this)) {
@@ -513,7 +516,7 @@ public class AddEventActivity extends BaseActivity implements LocationInterface 
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+       // super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case (PLACE_PICKER_REQUEST): {
                 if (resultCode == Activity.RESULT_OK) {
@@ -592,7 +595,7 @@ public class AddEventActivity extends BaseActivity implements LocationInterface 
                                     SelectedContactObject sb = new SelectedContactObject(Parcel.obtain());
                                     sb.setName(contactNameOnBlank.get(i));
                                     sb.setNumber(contactNoOnBlank.get(i));
-                                    if (contactHkIDOnBlank.get(i) != null || !contactHkIDOnBlank.get(i).equals("")) {
+                                    if (contactHkIDOnBlank.get(i) != null /*|| !contactHkIDOnBlank.get(i).equals("")*/) {
                                         sb.setHkID(contactHkIDOnBlank.get(i));
                                         groupInvitees.add(contactHkIDOnBlank.get(i));
                                     }

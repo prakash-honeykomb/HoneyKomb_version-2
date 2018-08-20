@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:id="@+id/actionbar"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/White"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <TextView
+                android:id="@+id/tittle_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Invitees"
+                android:textColor="@color/bar_title_color"
+                android:textSize="@dimen/text_size_22" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end">
+
+                <ImageView
+                    android:id="@+id/toolbar_calender_IMV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:layout_marginRight="25dp"
+                    android:contentDescription="@string/calendar"
+                    android:src="@mipmap/calendar"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/toolbar_list_view_IMV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:visibility="gone"
+                    android:layout_marginRight="25dp"
+                    android:contentDescription="@string/show_event_list"
+                    android:src="@mipmap/listview" />
+
+                <ImageView
+                    android:id="@+id/toolbar_add_IMV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:visibility="gone"
+                    android:layout_marginRight="15dp"
+                    android:contentDescription="@string/add"
+                    android:src="@mipmap/addgroup" />
+
+                <TextView
+                    android:id="@+id/toolbar_save_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginRight="12dp"
+                    android:text="@string/button_text_done"
+                    android:textColor="@color/title_color"
+                    android:textSize="@dimen/owner_name_text_size"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_contact_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+        android:layout_below="@+id/actionbar"
+        >
+
+        <FrameLayout
+            android:id="@+id/frag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <EditText
+                android:id="@+id/input_search"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_edittext"
+                android:hint="@string/search_contact_hint"
+
+                android:layout_marginBottom="@dimen/body_padding_bottom"
+                android:layout_marginLeft="@dimen/activity_margin"
+                android:layout_marginRight="@dimen/activity_margin"
+                android:paddingLeft="@dimen/body_padding_bottom"
+                android:paddingStart="@dimen/body_padding_bottom"
+                android:paddingRight="@dimen/body_padding_bottom"
+              android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/header_textColor"
+                android:drawableLeft="@drawable/places_ic_search"
+                android:drawableStart="@drawable/places_ic_search"
+                android:textCursorDrawable="@drawable/custom_edit_text_cursor"
+                android:textSize="18sp" />
+            <!--<android.support.v7.widget.SearchView
+                android:id="@+id/input_search"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                android:hint="@string/search_contact_hint"
+                android:textAlignment="center"
+                android:textColor="@color/header_textColor"
+                android:textCursorDrawable="@drawable/custom_edit_text_cursor"
+                android:textSize="18sp" />-->
+
+
+        </FrameLayout>
+
+
+        <ImageButton
+            android:id="@+id/ib_done_contacts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@null"
+            android:visibility="gone"
+            android:clickable="true"
+            android:gravity="center"
+            android:scaleType="center"
+            android:src="@mipmap/ic_done" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_all_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:orientation="vertical"
+        android:layout_below="@+id/ll_contact_search"
+        android:background="@color/lv_divider_color">
+
+        <TextView
+            android:id="@+id/tv_selected_contacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:padding="6dp"
+            android:visibility="visible"
+            android:paddingLeft="10dp"
+            android:text="@string/allContacts"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color_dark_grey"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ListView
+            android:id="@+id/groups_RCV"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scrollbars="horizontal"
+            android:visibility="gone"
+            android:layout_marginTop="5dp"/>
+        <!--<include layout="@layout/row_group_member"/>-->
+
+        <!--<CheckBox
+            android:id="@+id/hk_contacts_selectall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="10dp"
+            android:button="@null"
+            android:checked="false"
+            android:padding="6dp"
+            android:text="@string/select_all"
+            android:textAlignment="center"
+            android:textColor="@color/headerText"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <CheckBox
+            android:id="@+id/user_contacts_selectall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="10dp"
+            android:button="@null"
+            android:checked="false"
+            android:padding="6dp"
+            android:text="@string/select_all"
+            android:textAlignment="center"
+            android:textColor="@color/headerText"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />-->
+
+    </LinearLayout>
+
+
+    <!-- <android.support.v7.widget.RecyclerView
+     android:id="@+id/contacts_RCV"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:layout_below="@+id/ll_all_contacts"
+     android:layout_margin="5dp" />-->
+
+
+    <ListView
+        android:id="@+id/contacts_RCV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_all_contacts"
+        android:layout_margin="5dp" />
+</RelativeLayout>

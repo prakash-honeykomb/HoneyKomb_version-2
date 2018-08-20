@@ -13,6 +13,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Parcel;
 import android.provider.ContactsContract;
 import android.support.annotation.RequiresApi;
@@ -73,6 +74,11 @@ public class DataBaseHelper {
     private static final String TABLE_QB_USER = "QBUsers";
     private static final String INDEX_HKActivities_activityID = "HKActivities_activityID";
     private static final String USER_PHONE_CONTACTS = "user_phone_contacts";
+    private static final String USER_GROUPS = "user_groups";
+    private static final String USER_GROUP_DETAILS = "user_group_details";
+
+
+
 
     // TODO added new Table to get/set to add/remove from APPLOZIC group 24-07-2017
     private static final String TABLE_REMOVE_INVITE_APL_GROUP = "add_remove_app_lozic_user";
@@ -308,6 +314,13 @@ public class DataBaseHelper {
             + "image" + " VARCHAR,"
             + "hkID" + " VARCHAR,"
             + "hkUUID" + " VARCHAR" + ")";
+    private static final String CREATE_TABLE_USER_GROUPS = "CREATE TABLE IF NOT EXISTS " + USER_GROUPS + "(" + "_id" + " integer NOT NULL PRIMARY KEY AUTOINCREMENT,"
+            + "groupName" + " VARCHAR,"
+            + "usersCount" + " VARCHAR,"
+             + "image" + " VARCHAR" + ")";
+    private static final String CREATE_TABLE_USER_GROUP_DETAILS = "CREATE TABLE IF NOT EXISTS " + USER_GROUP_DETAILS + "(" + "_id" + " integer NOT NULL PRIMARY KEY AUTOINCREMENT,"
+            + "groupID" + " VARCHAR,"
+            + "contactNo" + " VARCHAR" +  ")";
 
     private static final String CREATE_INDEX_HKActivities_activityID = "CREATE UNIQUE INDEX IF NOT EXISTS " + INDEX_HKActivities_activityID + " ON " + TABLE_HKACTIVITIES + "";
     private static final String createUsersIndex = "CREATE UNIQUE INDEX IF NOT EXISTS Users_HK_UUID ON Users(HK_UUID)";
@@ -323,6 +336,8 @@ public class DataBaseHelper {
     private static final String createActivityDatesIndex = "CREATE UNIQUE INDEX IF NOT EXISTS ActivityDates_activityId_startDate_endDate ON ActivityDates(activityId,startDate,endDate)";
     private static final String create_index_REMOVE_INVITE_APL_GROUP = "CREATE UNIQUE INDEX IF NOT EXISTS add_remove_app_lozic_user_UniqueID ON add_remove_app_lozic_user(UniqueID)";
     private static final String create_index_USER_PHONE_CONTACTS = "CREATE UNIQUE INDEX IF NOT EXISTS user_phone_contacts_contactNo ON user_phone_contacts(contactNo)";
+    private static final String create_index_USER_GROUPS = "CREATE UNIQUE INDEX IF NOT EXISTS user_groups_contactNo ON user_groups(contactNo)";
+    private static final String create_index_USER_GROUP_DETAILS = "CREATE UNIQUE INDEX IF NOT EXISTS user_group_details_contactNo ON user_group_details(contactNo)";
 
     /**
      * Parameterized Constructor to initialize dataHelper Object
@@ -344,6 +359,43 @@ public class DataBaseHelper {
         String query = "SELECT * FROM user_phone_contacts ORDER BY CASE WHEN trim(hkid) = '' THEN 2 ELSE 1 END ASC, contactName ASC";
         Cursor cursor = db.rawQuery(query, null);
         return cursor;
+    }
+    public Cursor getCursorContactNewGroup() {
+        String query = "SELECT * FROM user_groups ORDER BY CASE WHEN trim(usersCount) = '' THEN 2 ELSE 1 END ASC, groupName ASC";
+        Cursor cursor = db.rawQuery(query, null);
+        return cursor;
+    }
+    public Cursor getCursorGroupUsers(String groupID) {
+        String query = "SELECT * FROM user_group_details WHERE groupID = '" + groupID + "'";
+        Cursor cursor = db.rawQuery(query, null);
+        return cursor;
+    }
+    public ArrayList<SelectedContactObject> getGroupUsersINArrayList(String groupID)
+    {
+        ArrayList<SelectedContactObject> values= new ArrayList<>();
+       // ContactsObject user= new ContactsObject(Parcel.obtain());
+        String query = "SELECT * FROM user_group_details WHERE groupID = '" + groupID + "'";
+        Cursor cursor = db.rawQuery(query, null);
+
+
+
+        if (cursor != null) {
+            if (cursor.getCount() != 0) {
+                while (cursor.moveToNext()) {
+                    SelectedContactObject user = new SelectedContactObject(Parcel.obtain());
+                    String groupId = cursor.getString(cursor.getColumnIndex("groupID"));
+                    String contactNo = cursor.getString(cursor.getColumnIndex("contactNo"));
+
+                    user.setNumber(contactNo);
+                    user.setHkID(groupId);
+                     values.add(user);
+                }
+            }
+            cursor.close();
+        }
+
+      return   values;
+
     }
 
     public void deleteActivityFromDBEventDetails(String activityID) {
@@ -457,6 +509,12 @@ public class DataBaseHelper {
         return cursor;
     }
 
+    public Cursor getCursorWithFilterGroup(String inClause, String strItemCode) {
+        String query = "SELECT * FROM user_groups WHERE groupName not in " + inClause + " and groupName LIKE '" + strItemCode + "'" +
+                "ORDER BY CASE WHEN trim(usersCount) = '' THEN 2 ELSE 1 END ASC";
+        Cursor cursor = db.rawQuery(query, null);
+        return cursor;
+    }
     public Cursor getCursor(String inClause) {
         String query = "SELECT * FROM user_phone_contacts WHERE contactNo not in " + inClause + " ORDER BY CASE WHEN trim(hkid) = '' THEN 2 ELSE 1 END ASC, contactName ASC";
         Cursor cursor = db.rawQuery(query, null);
@@ -480,7 +538,26 @@ public class DataBaseHelper {
         contentValues1.put("ActionType", "Modify");
         db.update("HKActivities", contentValues1, "activityID = '" + activityID + "'", null);
     }
-
+    public void updateGroupSelectedListOfUsers(String contactNo) {
+        ContentValues contentValues1 = new ContentValues();
+        contentValues1.put("ActionType", "Modify");
+        db.execSQL("DELETE FROM " + USER_GROUP_DETAILS+ " WHERE contactNo = '"+contactNo+"'");
+        //db.update("HKActivities", contentValues1, "activityID = '" + activityID + "'", null);
+    }
+    // delete User Group
+    public void deleteUserGroup(String groupID) {
+        ContentValues contentValues1 = new ContentValues();
+        contentValues1.put("ActionType", "Modify");
+        db.execSQL("DELETE FROM " + USER_GROUPS+ " WHERE _id = '"+groupID+"'");
+        //db.update("HKActivities", contentValues1, "activityID = '" + activityID + "'", null);
+    }
+    // Detelte user base on group ID
+    public void deleteGroupSelectedListOfUsers(String groupID) {
+        ContentValues contentValues1 = new ContentValues();
+        contentValues1.put("ActionType", "Modify");
+        db.execSQL("DELETE FROM " + USER_GROUP_DETAILS+ " WHERE groupID = '"+groupID+"'");
+        //db.update("HKActivities", contentValues1, "activityID = '" + activityID + "'", null);
+    }
     public void insertOrUpdateSLOfINV(ContentValues contentValues) {
         db.insertWithOnConflict(TABLE_ACTIVITY_USERS, null, contentValues, SQLiteDatabase.CONFLICT_REPLACE);
     }
@@ -742,7 +819,10 @@ public class DataBaseHelper {
         private Context context;
 
         public DatabaseHelper(Context context) {
-            super(context, DATABASE_NAME, null, DATABASE_VERSION);
+           // super(context, Environment.getExternalStorageDirectory().getPath() + "/" + DATABASE_NAME, null, 1);
+            //Log.d(TAG, "Database path" + Environment.getExternalStorageDirectory().getPath());
+             super(context, DATABASE_NAME, null, DATABASE_VERSION);
+          //  context.openOrCreateDatabase(DATABASE_NAME, context.MODE_PRIVATE, null);
             this.context = context;
         }
 
@@ -766,9 +846,12 @@ public class DataBaseHelper {
 
         public void onCreate(SQLiteDatabase db) {
             try {
+                Log.d(TAG, "onCreate: ------------------------------------------------------------------------\n");
                 // TODO creating required tables
                 db.execSQL(CREATE_TABLE_USERS);
+                Log.d(TAG, "onCreate: CREATE_TABLE_USERS");
                 db.execSQL(CREATE_TABLE_USER_CONTACTS);
+                Log.d(TAG, "onCreate: CREATE_TABLE_USER_CONTACTS");
                 db.execSQL(CREATE_TABLE_HKACTIVITIES);
                 db.execSQL(CREATE_TABLE_HKACTIVITIES_FOR_CHAT_ICON);
                 db.execSQL(CREATE_TABLE_HKACTIVITIES_DETAILS);
@@ -795,6 +878,19 @@ public class DataBaseHelper {
                 db.execSQL(create_index_REMOVE_INVITE_APL_GROUP);
                 db.execSQL(CREATE_TABLE_USER_PHONE_CONTACTS);
                 db.execSQL(create_index_USER_PHONE_CONTACTS);
+                Log.d(TAG, "onCreate: create_index_USER_PHONE_CONTACTS");
+
+                db.execSQL(CREATE_TABLE_USER_GROUPS);
+
+                Log.d(TAG, "onCreate: CREATE_TABLE_USER_GROUPS");
+
+                //    db.execSQL(create_index_USER_GROUPS);
+                db.execSQL(CREATE_TABLE_USER_GROUP_DETAILS);
+                Log.d(TAG, "onCreate: CREATE_TABLE_USER_GROUP_DETAILS");
+
+                //   db.execSQL(create_index_USER_GROUP_DETAILS);
+
+
             } catch (Exception e) {
                 e.printStackTrace();
                 Log.e("DBHelper", "onCreate Exception " + e);
@@ -835,6 +931,13 @@ public class DataBaseHelper {
                 db.execSQL(context.getResources().getString(R.string.DROP_TABLE_IF_EXISTS) + CREATE_TABLE_REMOVE_INVITE_APL_GROUP);
                 db.execSQL(context.getResources().getString(R.string.DROP_TABLE_IF_EXISTS) + CREATE_TABLE_USER_PHONE_CONTACTS);
                 db.execSQL(context.getResources().getString(R.string.DROP_TABLE_IF_EXISTS) + create_index_USER_PHONE_CONTACTS);
+                db.execSQL(context.getResources().getString(R.string.DROP_TABLE_IF_EXISTS) + CREATE_TABLE_USER_GROUPS);
+                db.execSQL(context.getResources().getString(R.string.DROP_TABLE_IF_EXISTS) + create_index_USER_GROUPS);
+                db.execSQL(context.getResources().getString(R.string.DROP_TABLE_IF_EXISTS) + CREATE_TABLE_USER_GROUP_DETAILS);
+
+                db.execSQL(context.getResources().getString(R.string.DROP_TABLE_IF_EXISTS) + create_index_USER_GROUP_DETAILS);
+                //db.execSQL(context.getResources().getString(R.string.DROP_TABLE_IF_EXISTS) + CREATE_TABLE_USER_GROUP_DETAILS);
+
 
 
                 onCreate(db);
@@ -1203,8 +1306,13 @@ public class DataBaseHelper {
 
                 if (isExists(USER_PHONE_CONTACTS, "where contactNo = '" + jsonObject1.optString("phone", "") + "'")) {
                     db.update(USER_PHONE_CONTACTS, values1, "contactNo=?", new String[]{jsonObject1.optString("phone", "")});
+                    Log.i(TAG, "getFinalContact:  Contact Table  Updated");
+
                 } else {
-//                    db.insert(USER_PHONE_CONTACTS, null, values1);
+                //    db.insertWithOnConflict(USER_PHONE_CONTACTS, null, values1, SQLiteDatabase.CONFLICT_REPLACE);
+                 //   Log.i(TAG, "getFinalContact:  New Row inserted");
+
+                    // db.insertWithOnConflict(USER_PHONE_CONTACTS, null, values1);
                 }
 
 //                db.insertWithOnConflict(USER_PHONE_CONTACTS, null, values1, SQLiteDatabase.CONFLICT_REPLACE);
@@ -1251,7 +1359,7 @@ public class DataBaseHelper {
 
         String result = "";
 
-        String getUserCountryCode = "SELECT REPLACE(PhoneNumber,SUBSTR(PhoneNumber,-10),'') AS UserCountryCode FROM Users";
+        String getUserCountryCode = "SELECT REPLACE (PhoneNumber,SUBSTR(PhoneNumber,-10),'') AS UserCountryCode FROM Users";
         Cursor cursor = db.rawQuery(getUserCountryCode, null);
         if (cursor != null && cursor.getCount() > 0)
             cursor.moveToFirst();
@@ -1496,7 +1604,18 @@ public class DataBaseHelper {
         cursor.close();
         return result;
     }
+    public void updateOwnerDetails(String HK_UUID,String imagePath) {
+        if (imagePath!=null) {
+            Log.d("filePath", " imagePath : " + imagePath);
 
+            //String path = imagePath.contains("/raw/") ? imagePath.replace("/raw/", "") : imagePath;
+            Log.d("filePath", " Path : " + imagePath);
+
+            ContentValues contentValues1 = new ContentValues();
+            contentValues1.put("PhotoPath", imagePath);
+            db.update("Users", contentValues1, "HK_UUID = '" + HK_UUID + "'", null);
+        }
+    }
     public ArrayList<ActivityDetailsDao> getActivityTasksData(String taskDisplay, String status, String hk_UUID) {
         ArrayList<ActivityDetailsDao> detailsArray = new ArrayList<ActivityDetailsDao>();
 
@@ -2993,10 +3112,38 @@ public class DataBaseHelper {
         values1.put("image", (String) contactObject.image);
         values1.put("hkID", (String) contactObject.hkID);
         values1.put("hkUUID", (String) contactObject.hkUUID);
+        if (isExists(USER_PHONE_CONTACTS, "where contactNo = '" + contactObject.contactNo+ "'")) {
+            db.update(USER_PHONE_CONTACTS, values1, "contactNo=?", new String[]{contactObject.contactNo});
+            Log.i(TAG, "getFinalContact:  USER_PHONE_CONTACTS  Updated with  ("+contactObject.contactNo+" )");
 
-        db.insertWithOnConflict(USER_PHONE_CONTACTS, null, values1, SQLiteDatabase.CONFLICT_REPLACE);
+        } else {
+            db.insertWithOnConflict(USER_PHONE_CONTACTS, null, values1, SQLiteDatabase.CONFLICT_REPLACE);
+            Log.i("DatabaseHelper", "new Contact inserted in USER_PHONE_CONTACTS ("+contactObject.contactNo+" )");
+        }
     }
 
+    public long addOrUpdateGroup(ServiceContactObject deviceContact) {
+
+        ServiceContactObject contactObject = deviceContact;
+        ContentValues values1 = new ContentValues();
+        values1.put("groupName", (String) contactObject.contactName);
+        values1.put("usersCount", (String) contactObject.contactNo);
+        values1.put("image", (String) contactObject.image);
+
+
+        long regionId =  db.insertWithOnConflict(USER_GROUPS, null, values1, SQLiteDatabase.CONFLICT_REPLACE);
+        return regionId;
+    }
+    public long addOrUpdateGroupDetails(ServiceContactObject deviceContact,String groupID) {
+
+        ServiceContactObject contactObject = deviceContact;
+        ContentValues values1 = new ContentValues();
+        values1.put("groupID",  groupID+"");
+        values1.put("contactNo",  (String) contactObject.contactNo);
+
+        long regionId = db.insertWithOnConflict(USER_GROUP_DETAILS, null, values1, SQLiteDatabase.CONFLICT_REPLACE);
+        return regionId;
+    }
     public void addUpdateContact(ServiceContactObject deviceContact) {
 
         ServiceContactObject contactObject = deviceContact;

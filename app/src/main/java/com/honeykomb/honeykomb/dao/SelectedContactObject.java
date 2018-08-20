@@ -18,7 +18,7 @@ public class SelectedContactObject implements Parcelable {
     private String contactName;
     private String contactNo;
     private String image;
-    private String hkID;
+    public String hkID;
     private String hkUUID;
     private String RSVPCount;
     private String deliveredTime;

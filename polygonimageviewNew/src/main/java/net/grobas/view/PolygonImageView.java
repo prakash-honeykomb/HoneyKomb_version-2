@@ -56,7 +56,7 @@ import net.grobas.shapes.RegularPolygonShape;
  *
  * @author Albert Grobas
  */
-public class PolygonImageView extends ImageView {
+public class PolygonImageView extends android.support.v7.widget.AppCompatImageView {
 
     //draws
     private Paint mPaint;
